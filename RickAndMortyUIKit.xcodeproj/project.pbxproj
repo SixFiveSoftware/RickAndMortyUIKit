@@ -16,6 +16,9 @@
 		3B396CFF28B9568E00A99EB6 /* RickAndMortyUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396CFE28B9568E00A99EB6 /* RickAndMortyUIKitTests.swift */; };
 		3B396D0928B9568E00A99EB6 /* RickAndMortyUIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D0828B9568E00A99EB6 /* RickAndMortyUIKitUITests.swift */; };
 		3B396D0B28B9568E00A99EB6 /* RickAndMortyUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D0A28B9568E00A99EB6 /* RickAndMortyUIKitUITestsLaunchTests.swift */; };
+		3B396D1828B9583100A99EB6 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D1728B9583100A99EB6 /* CharacterService.swift */; };
+		3B396D1A28B9587900A99EB6 /* RAMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D1928B9587900A99EB6 /* RAMCharacter.swift */; };
+		3B396D2128B95E6100A99EB6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D2028B95E6100A99EB6 /* Errors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		3B396D0428B9568E00A99EB6 /* RickAndMortyUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B396D0828B9568E00A99EB6 /* RickAndMortyUIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyUIKitUITests.swift; sourceTree = "<group>"; };
 		3B396D0A28B9568E00A99EB6 /* RickAndMortyUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3B396D1728B9583100A99EB6 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		3B396D1928B9587900A99EB6 /* RAMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMCharacter.swift; sourceTree = "<group>"; };
+		3B396D2028B95E6100A99EB6 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 		3B396CE628B9568D00A99EB6 /* RickAndMortyUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3B396D1F28B95E4800A99EB6 /* Errors */,
+				3B396D1C28B958CB00A99EB6 /* Models */,
+				3B396D1B28B958C200A99EB6 /* Services */,
 				3B396CE728B9568D00A99EB6 /* AppDelegate.swift */,
 				3B396CE928B9568D00A99EB6 /* SceneDelegate.swift */,
 				3B396CEB28B9568D00A99EB6 /* ViewController.swift */,
@@ -125,6 +134,30 @@
 				3B396D0A28B9568E00A99EB6 /* RickAndMortyUIKitUITestsLaunchTests.swift */,
 			);
 			path = RickAndMortyUIKitUITests;
+			sourceTree = "<group>";
+		};
+		3B396D1B28B958C200A99EB6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3B396D1728B9583100A99EB6 /* CharacterService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3B396D1C28B958CB00A99EB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3B396D1928B9587900A99EB6 /* RAMCharacter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3B396D1F28B95E4800A99EB6 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				3B396D2028B95E6100A99EB6 /* Errors.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B396CEC28B9568D00A99EB6 /* ViewController.swift in Sources */,
+				3B396D1A28B9587900A99EB6 /* RAMCharacter.swift in Sources */,
 				3B396CE828B9568D00A99EB6 /* AppDelegate.swift in Sources */,
 				3B396CEA28B9568D00A99EB6 /* SceneDelegate.swift in Sources */,
+				3B396D1828B9583100A99EB6 /* CharacterService.swift in Sources */,
+				3B396D2128B95E6100A99EB6 /* Errors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +481,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +510,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
