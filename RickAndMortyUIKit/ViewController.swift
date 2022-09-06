@@ -44,6 +44,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let char = characters[indexPath.row]
         cell.textLabel?.text = char.name
         return cell
+
+        // BJ: was going to add a Task for image fetching and display, async/await style, that can cancel if cell is enqueued for reuse
     }
 }
 

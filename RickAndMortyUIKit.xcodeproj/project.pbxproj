@@ -19,6 +19,7 @@
 		3B396D1828B9583100A99EB6 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D1728B9583100A99EB6 /* CharacterService.swift */; };
 		3B396D1A28B9587900A99EB6 /* RAMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D1928B9587900A99EB6 /* RAMCharacter.swift */; };
 		3B396D2128B95E6100A99EB6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D2028B95E6100A99EB6 /* Errors.swift */; };
+		3B396D2628B9672100A99EB6 /* ResponseCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D2528B9672100A99EB6 /* ResponseCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3B396D1728B9583100A99EB6 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		3B396D1928B9587900A99EB6 /* RAMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMCharacter.swift; sourceTree = "<group>"; };
 		3B396D2028B95E6100A99EB6 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		3B396D2528B9672100A99EB6 /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		3B396CE628B9568D00A99EB6 /* RickAndMortyUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3B396D2428B9671600A99EB6 /* Protocols */,
 				3B396D1F28B95E4800A99EB6 /* Errors */,
 				3B396D1C28B958CB00A99EB6 /* Models */,
 				3B396D1B28B958C200A99EB6 /* Services */,
@@ -158,6 +161,14 @@
 				3B396D2028B95E6100A99EB6 /* Errors.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		3B396D2428B9671600A99EB6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3B396D2528B9672100A99EB6 /* ResponseCodable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +305,7 @@
 				3B396CEC28B9568D00A99EB6 /* ViewController.swift in Sources */,
 				3B396D1A28B9587900A99EB6 /* RAMCharacter.swift in Sources */,
 				3B396CE828B9568D00A99EB6 /* AppDelegate.swift in Sources */,
+				3B396D2628B9672100A99EB6 /* ResponseCodable.swift in Sources */,
 				3B396CEA28B9568D00A99EB6 /* SceneDelegate.swift in Sources */,
 				3B396D1828B9583100A99EB6 /* CharacterService.swift in Sources */,
 				3B396D2128B95E6100A99EB6 /* Errors.swift in Sources */,

@@ -45,4 +45,7 @@ extension URLSession {
             }.resume()
         }
     }
+
+    // BJ: was going to work on a generic async/await fetcher that parses based on the model's ResponseDecodable info
+
 }
