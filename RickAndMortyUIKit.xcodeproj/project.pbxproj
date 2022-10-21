@@ -23,6 +23,7 @@
 		3BA7047D2902F55200B88E03 /* ServiceMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7047C2902F55200B88E03 /* ServiceMethod.swift */; };
 		3BA7047F2902F78E00B88E03 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7047E2902F78E00B88E03 /* ServiceTests.swift */; };
 		3BA704832903251000B88E03 /* RAMCharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA704822903251000B88E03 /* RAMCharacterTests.swift */; };
+		3BA704862903284500B88E03 /* URLSession+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA704852903284500B88E03 /* URLSession+Async.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		3BA7047C2902F55200B88E03 /* ServiceMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMethod.swift; sourceTree = "<group>"; };
 		3BA7047E2902F78E00B88E03 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		3BA704822903251000B88E03 /* RAMCharacterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMCharacterTests.swift; sourceTree = "<group>"; };
+		3BA704852903284500B88E03 /* URLSession+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Async.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		3B396CE628B9568D00A99EB6 /* RickAndMortyUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3BA704842903283800B88E03 /* Extensions */,
 				3B396D2428B9671600A99EB6 /* Protocols */,
 				3B396D1F28B95E4800A99EB6 /* Errors */,
 				3B396D1C28B958CB00A99EB6 /* Models */,
@@ -194,6 +197,14 @@
 				3BA704822903251000B88E03 /* RAMCharacterTests.swift */,
 			);
 			path = ResponseCodableModels;
+			sourceTree = "<group>";
+		};
+		3BA704842903283800B88E03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3BA704852903284500B88E03 /* URLSession+Async.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +345,7 @@
 				3B396CE828B9568D00A99EB6 /* AppDelegate.swift in Sources */,
 				3B396D2628B9672100A99EB6 /* ResponseCodable.swift in Sources */,
 				3B396CEA28B9568D00A99EB6 /* SceneDelegate.swift in Sources */,
+				3BA704862903284500B88E03 /* URLSession+Async.swift in Sources */,
 				3B396D1828B9583100A99EB6 /* CharacterService.swift in Sources */,
 				3B396D2128B95E6100A99EB6 /* Errors.swift in Sources */,
 			);
