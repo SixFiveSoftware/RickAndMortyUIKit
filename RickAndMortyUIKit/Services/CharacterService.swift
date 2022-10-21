@@ -7,15 +7,12 @@
 
 import Foundation
 
-func fetchCharacters() async throws -> [RAMCharacter] {
-    let url = URL(string: "https://rickandmortyapi.com/api/character")!
-    let config = URLSessionConfiguration.ephemeral
-    let (data, _) = try await URLSession(configuration: config).asyncData(from: url)
-    return try JSONDecoder().decode(CharacterServiceResult.self, from: data).results
+enum CharacterService {
+    case allCharacters
 }
 
-struct CharacterService: Service {
-    typealias ResponseType = RAMCharacter
+extension CharacterService: Service {
+    typealias ResponseType = RAMCharacterResult
 
     var path: String { "character" }
     var method: ServiceMethod { .get }

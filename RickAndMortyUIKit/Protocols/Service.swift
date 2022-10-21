@@ -21,7 +21,8 @@ extension Service {
     // MARK: default implementations
     var parameters: [String: Any]? { nil }
     var body: Data? { nil }
-    var baseURLString: String { "https://rickandmortyapi.com/api" }
+    var baseURLString: String { "https://rickandmortyapi.com" }
+    private var basePath: String { "api" }
 
     // MARK: computed request
     var urlRequest: URLRequest {
@@ -34,8 +35,9 @@ extension Service {
 
     // MARK: private
     private var formattedPath: String {
-        let prepended = path.starts(with: "/") ? path : "/" + path
-        let formatted = prepended.hasSuffix("/") ? prepended : prepended + "/"
+        let cleanedPath = path.starts(with: "/") ? String(path.dropFirst(1)) : path
+        let joined = "/" + [basePath, cleanedPath].joined(separator: "/")
+        let formatted = joined.hasSuffix("/") ? joined : joined + "/"
         return formatted
     }
 

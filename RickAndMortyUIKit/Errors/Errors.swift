@@ -8,7 +8,7 @@
 import Foundation
 
 enum Errors {
-    enum CharacterService: Error {
+    enum Networking: Error {
         case failed
         case failedToDecode
         case invalidStatusCode

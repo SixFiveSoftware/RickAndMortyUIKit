@@ -12,13 +12,15 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     private var characters = [RAMCharacter]()
 
+    private let client = APIClient()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         Task {
             do {
                 print("about to fetch characters...")
-                characters = try await fetchCharacters()
+                characters = try await client.fetch(service: CharacterService.allCharacters).results
                 tableView.reloadData()
                 print("fetched characters.")
             } catch {

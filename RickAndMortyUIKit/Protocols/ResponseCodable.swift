@@ -33,8 +33,8 @@ extension ResponseDecodable {
     return decoder
   }
 
-    static func decode(from data: Data) -> Self? {
-        try? Self.decoder.decode(Self.self, from: data)
+    static func decode(from data: Data) throws -> Self {
+        try Self.decoder.decode(Self.self, from: data)
     }
 
   private static var customDateDecodingStrategy: (Decoder) throws -> Date {

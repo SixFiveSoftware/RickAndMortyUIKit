@@ -30,7 +30,7 @@ struct RAMCharacter: ResponseDecodable, Identifiable {
     var imageURL: URL { URL(string: imageURLString) ?? URL(string: "https://google.com")! }
 }
 
-struct CharacterServiceResult: ResponseDecodable {
+struct RAMCharacterResult: ResponseDecodable {
     static var sampleJSON: String {
         """
         {
