@@ -20,6 +20,10 @@
 		3B396D1A28B9587900A99EB6 /* RAMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D1928B9587900A99EB6 /* RAMCharacter.swift */; };
 		3B396D2128B95E6100A99EB6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D2028B95E6100A99EB6 /* Errors.swift */; };
 		3B396D2628B9672100A99EB6 /* ResponseCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B396D2528B9672100A99EB6 /* ResponseCodable.swift */; };
+		3B8DB0112901EE030019932F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8DB0102901EE030019932F /* Service.swift */; };
+		3BA7047D2902F55200B88E03 /* ServiceMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7047C2902F55200B88E03 /* ServiceMethod.swift */; };
+		3BA7047F2902F78E00B88E03 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7047E2902F78E00B88E03 /* ServiceTests.swift */; };
+		3BA704832903251000B88E03 /* RAMCharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA704822903251000B88E03 /* RAMCharacterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		3B396D1928B9587900A99EB6 /* RAMCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMCharacter.swift; sourceTree = "<group>"; };
 		3B396D2028B95E6100A99EB6 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		3B396D2528B9672100A99EB6 /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
+		3B8DB0102901EE030019932F /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		3BA7047C2902F55200B88E03 /* ServiceMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMethod.swift; sourceTree = "<group>"; };
+		3BA7047E2902F78E00B88E03 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
+		3BA704822903251000B88E03 /* RAMCharacterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMCharacterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,8 @@
 		3B396CFD28B9568E00A99EB6 /* RickAndMortyUIKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				3BA70481290324FC00B88E03 /* ResponseCodableModels */,
+				3BA70480290324D500B88E03 /* Service */,
 				3B396CFE28B9568E00A99EB6 /* RickAndMortyUIKitTests.swift */,
 			);
 			path = RickAndMortyUIKitTests;
@@ -167,8 +177,26 @@
 			isa = PBXGroup;
 			children = (
 				3B396D2528B9672100A99EB6 /* ResponseCodable.swift */,
+				3B8DB0102901EE030019932F /* Service.swift */,
+				3BA7047C2902F55200B88E03 /* ServiceMethod.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3BA70480290324D500B88E03 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3BA7047E2902F78E00B88E03 /* ServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3BA70481290324FC00B88E03 /* ResponseCodableModels */ = {
+			isa = PBXGroup;
+			children = (
+				3BA704822903251000B88E03 /* RAMCharacterTests.swift */,
+			);
+			path = ResponseCodableModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +330,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA7047D2902F55200B88E03 /* ServiceMethod.swift in Sources */,
 				3B396CEC28B9568D00A99EB6 /* ViewController.swift in Sources */,
+				3B8DB0112901EE030019932F /* Service.swift in Sources */,
 				3B396D1A28B9587900A99EB6 /* RAMCharacter.swift in Sources */,
 				3B396CE828B9568D00A99EB6 /* AppDelegate.swift in Sources */,
 				3B396D2628B9672100A99EB6 /* ResponseCodable.swift in Sources */,
@@ -317,6 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B396CFF28B9568E00A99EB6 /* RickAndMortyUIKitTests.swift in Sources */,
+				3BA7047F2902F78E00B88E03 /* ServiceTests.swift in Sources */,
+				3BA704832903251000B88E03 /* RAMCharacterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
