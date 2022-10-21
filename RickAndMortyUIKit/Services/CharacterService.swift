@@ -13,3 +13,10 @@ func fetchCharacters() async throws -> [RAMCharacter] {
     let (data, _) = try await URLSession(configuration: config).asyncData(from: url)
     return try JSONDecoder().decode(CharacterServiceResult.self, from: data).results
 }
+
+struct CharacterService: Service {
+    typealias ResponseType = RAMCharacter
+
+    var path: String { "character" }
+    var method: ServiceMethod { .get }
+}

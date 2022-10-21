@@ -11,7 +11,6 @@ protocol Service {
     /// ResponseType is a type that is provided by a conforming Service as the type to be used when parsing the response
     associatedtype ResponseType: ResponseDecodable
 
-    var baseURL: String { get }
     var path: String { get }
     var parameters: [String: Any]? { get }
     var method: ServiceMethod { get }
@@ -22,6 +21,7 @@ extension Service {
     // MARK: default implementations
     var parameters: [String: Any]? { nil }
     var body: Data? { nil }
+    var baseURLString: String { "https://rickandmortyapi.com/api" }
 
     // MARK: computed request
     var urlRequest: URLRequest {
@@ -40,7 +40,7 @@ extension Service {
     }
 
     private var url: URL? {
-        var components = URLComponents(string: baseURL)
+        var components = URLComponents(string: baseURLString)
         components?.path = formattedPath
 
         if method == .get, let params = parameters as? [String: String] {
