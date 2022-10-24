@@ -19,10 +19,8 @@ class ViewController: UIViewController {
 
         Task {
             do {
-                print("about to fetch characters...")
                 characters = try await client.fetch(service: CharacterService.allCharacters).results
                 tableView.reloadData()
-                print("fetched characters.")
             } catch {
                 print("There was an error: \(error)")
             }
@@ -32,22 +30,25 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("providing count: \(characters.count)")
         return characters.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        guard indexPath.row < characters.count else {
-            print("indexPath.row (\(indexPath.row) is greater or equal to characters.count (\(characters.count)")
-            return .init()
-        }
-        print("in cellForRow, good indexPath.row: \(indexPath.row)")
+        guard indexPath.row < characters.count else { return .init() }
         let char = characters[indexPath.row]
         cell.textLabel?.text = char.name
+        Task {
+//            if Task.isCancelled { return }
+            await cell.imageView?.loadImage(from: char.imageURL)
+//            if Task.isCancelled { return }
+            cell.layoutSubviews()
+        }
         return cell
+    }
 
-        // BJ: was going to add a Task for image fetching and display, async/await style, that can cancel if cell is enqueued for reuse
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        128
     }
 }
 

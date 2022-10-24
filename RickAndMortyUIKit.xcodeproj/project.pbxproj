@@ -26,6 +26,8 @@
 		3BA704862903284500B88E03 /* URLSession+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA704852903284500B88E03 /* URLSession+Async.swift */; };
 		3BA70489290329B800B88E03 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA70488290329B800B88E03 /* APIClient.swift */; };
 		3BA7048C290330D800B88E03 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7048B290330D800B88E03 /* Array+Extensions.swift */; };
+		3BA7048F290337A800B88E03 /* ThumbnailImageActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7048E290337A800B88E03 /* ThumbnailImageActor.swift */; };
+		3BA7049229033B1200B88E03 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7049129033B1200B88E03 /* AsyncImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		3BA704852903284500B88E03 /* URLSession+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Async.swift"; sourceTree = "<group>"; };
 		3BA70488290329B800B88E03 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3BA7048B290330D800B88E03 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		3BA7048E290337A800B88E03 /* ThumbnailImageActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageActor.swift; sourceTree = "<group>"; };
+		3BA7049129033B1200B88E03 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,12 +123,14 @@
 		3B396CE628B9568D00A99EB6 /* RickAndMortyUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3BA7048D2903379500B88E03 /* Actors */,
 				3BA70487290329B100B88E03 /* API */,
 				3BA704842903283800B88E03 /* Extensions */,
 				3B396D2428B9671600A99EB6 /* Protocols */,
 				3B396D1F28B95E4800A99EB6 /* Errors */,
 				3B396D1C28B958CB00A99EB6 /* Models */,
 				3B396D1B28B958C200A99EB6 /* Services */,
+				3BA7049029033B0400B88E03 /* Views */,
 				3B396CE728B9568D00A99EB6 /* AppDelegate.swift */,
 				3B396CE928B9568D00A99EB6 /* SceneDelegate.swift */,
 				3B396CEB28B9568D00A99EB6 /* ViewController.swift */,
@@ -219,6 +225,22 @@
 				3BA70488290329B800B88E03 /* APIClient.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		3BA7048D2903379500B88E03 /* Actors */ = {
+			isa = PBXGroup;
+			children = (
+				3BA7048E290337A800B88E03 /* ThumbnailImageActor.swift */,
+			);
+			path = Actors;
+			sourceTree = "<group>";
+		};
+		3BA7049029033B0400B88E03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3BA7049129033B1200B88E03 /* AsyncImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA7048F290337A800B88E03 /* ThumbnailImageActor.swift in Sources */,
 				3BA7047D2902F55200B88E03 /* ServiceMethod.swift in Sources */,
 				3B396CEC28B9568D00A99EB6 /* ViewController.swift in Sources */,
 				3B8DB0112901EE030019932F /* Service.swift in Sources */,
@@ -364,6 +387,7 @@
 				3BA704862903284500B88E03 /* URLSession+Async.swift in Sources */,
 				3B396D1828B9583100A99EB6 /* CharacterService.swift in Sources */,
 				3B396D2128B95E6100A99EB6 /* Errors.swift in Sources */,
+				3BA7049229033B1200B88E03 /* AsyncImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
