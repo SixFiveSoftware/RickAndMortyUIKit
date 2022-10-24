@@ -11,7 +11,7 @@ enum ViewState {
     case loading
     case characters([RAMCharacter])
     case aliveCharacters([RAMCharacter])
-    case locations
+    case locations([RAMLocation])
     case error(Error)
 }
 
@@ -40,6 +40,18 @@ class Interactor {
             do {
                 let characters = try await client.fetch(service: CharacterService.status(.alive)).results
                 currentState = .aliveCharacters(characters)
+            } catch {
+                currentState = .error(error)
+            }
+        }
+    }
+
+    func fetchAllLocations() {
+        currentState = .loading
+        Task {
+            do {
+                let locations = try await client.fetch(service: LocationService.allLocations).results
+                currentState = .locations(locations)
             } catch {
                 currentState = .error(error)
             }

@@ -29,6 +29,8 @@
 		3BA7049229033B1200B88E03 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7049129033B1200B88E03 /* AsyncImageView.swift */; };
 		3BA7049729071D6900B88E03 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3BA7049629071D6900B88E03 /* SnapKit */; };
 		3BA7049B2907255C00B88E03 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7049A2907255C00B88E03 /* Interactor.swift */; };
+		3BC68A7029073102007BAEDF /* RAMLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC68A6F29073102007BAEDF /* RAMLocation.swift */; };
+		3BC68A72290731FA007BAEDF /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC68A71290731FA007BAEDF /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		3BA7048E290337A800B88E03 /* ThumbnailImageActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageActor.swift; sourceTree = "<group>"; };
 		3BA7049129033B1200B88E03 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		3BA7049A2907255C00B88E03 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		3BC68A6F29073102007BAEDF /* RAMLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMLocation.swift; sourceTree = "<group>"; };
+		3BC68A71290731FA007BAEDF /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				3B396D1728B9583100A99EB6 /* CharacterService.swift */,
+				3BC68A71290731FA007BAEDF /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				3B396D1928B9587900A99EB6 /* RAMCharacter.swift */,
+				3BC68A6F29073102007BAEDF /* RAMLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 				3B396CEC28B9568D00A99EB6 /* ViewController.swift in Sources */,
 				3B8DB0112901EE030019932F /* Service.swift in Sources */,
 				3B396D1A28B9587900A99EB6 /* RAMCharacter.swift in Sources */,
+				3BC68A7029073102007BAEDF /* RAMLocation.swift in Sources */,
 				3B396CE828B9568D00A99EB6 /* AppDelegate.swift in Sources */,
 				3BA70489290329B800B88E03 /* APIClient.swift in Sources */,
 				3B396D2628B9672100A99EB6 /* ResponseCodable.swift in Sources */,
@@ -395,6 +402,7 @@
 				3B396D1828B9583100A99EB6 /* CharacterService.swift in Sources */,
 				3BA7049B2907255C00B88E03 /* Interactor.swift in Sources */,
 				3B396D2128B95E6100A99EB6 /* Errors.swift in Sources */,
+				3BC68A72290731FA007BAEDF /* LocationService.swift in Sources */,
 				3BA7049229033B1200B88E03 /* AsyncImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

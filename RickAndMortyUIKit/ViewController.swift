@@ -9,6 +9,12 @@ import Combine
 import SnapKit
 import UIKit
 
+enum DataSource {
+    case empty
+    case characters([RAMCharacter])
+    case locations([RAMLocation])
+}
+
 class ViewController: UIViewController {
 
     private let tableView = UITableView()
@@ -17,7 +23,8 @@ class ViewController: UIViewController {
     private let aliveCharactersButton = UIButton()
     private let locationsButton = UIButton()
 
-    private var characters = [RAMCharacter]()
+//    private var characters = [RAMCharacter]()
+    private var dataSource: DataSource = .empty
 
     private var interactor = Interactor()
     private var cancellables: Set<AnyCancellable> = []
@@ -74,13 +81,13 @@ class ViewController: UIViewController {
     private func updateUI(for state: ViewState) {
         switch state {
         case .loading:
-            characters = []
+            dataSource = .empty
         case .characters(let characters):
-            self.characters = characters
+            dataSource = .characters(characters)
         case .aliveCharacters(let characters):
-            self.characters = characters
-        case .locations:
-            break
+            dataSource = .characters(characters)
+        case .locations(let locations):
+            dataSource = .locations(locations)
         case .error:
             break
         }
@@ -97,26 +104,45 @@ class ViewController: UIViewController {
     }
     @objc
     private func locationsButtonTapped(_ sender: UIButton) {
+        interactor.fetchAllLocations()
     }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count
+        switch dataSource {
+        case .empty:
+            return 0
+        case .characters(let items):
+            return items.count
+        case .locations(let items):
+            return items.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath)
-        guard indexPath.row < characters.count else { return .init() }
-        let char = characters[indexPath.row]
-        cell.textLabel?.text = char.name
-        Task {
-            if Task.isCancelled { return }
-            await cell.imageView?.loadImage(from: char.imageURL)
-            if Task.isCancelled { return }
-            cell.layoutSubviews()
+        switch dataSource {
+        case .empty:
+            return .init()
+        case .characters(let characters):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath)
+            guard indexPath.row < characters.count else { return .init() }
+            let char = characters[indexPath.row]
+            cell.textLabel?.text = char.name
+            Task {
+                if Task.isCancelled { return }
+                await cell.imageView?.loadImage(from: char.imageURL)
+                if Task.isCancelled { return }
+                cell.layoutSubviews()
+            }
+            return cell
+        case .locations(let locations):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
+            guard indexPath.row < locations.count else { return .init() }
+            let location = locations[indexPath.row]
+            cell.textLabel?.text = location.displayText
+            return cell
         }
-        return cell
     }
 }
 
