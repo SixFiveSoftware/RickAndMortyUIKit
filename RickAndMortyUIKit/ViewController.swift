@@ -39,9 +39,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let char = characters[indexPath.row]
         cell.textLabel?.text = char.name
         Task {
-//            if Task.isCancelled { return }
+            if Task.isCancelled { return }
             await cell.imageView?.loadImage(from: char.imageURL)
-//            if Task.isCancelled { return }
+            if Task.isCancelled { return }
             cell.layoutSubviews()
         }
         return cell
