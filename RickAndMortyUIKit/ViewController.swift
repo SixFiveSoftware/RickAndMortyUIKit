@@ -5,6 +5,7 @@
 //  Created by BJ Miller on 8/26/22.
 //
 
+import Combine
 import SnapKit
 import UIKit
 
@@ -18,13 +19,15 @@ class ViewController: UIViewController {
 
     private var characters = [RAMCharacter]()
 
-    private let client = APIClient()
+    private var interactor = Interactor()
+    private var cancellables: Set<AnyCancellable> = []
 
     override func loadView() {
         super.loadView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CharacterCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LocationCell")
         optionStackView.axis = .horizontal
         optionStackView.distribution = .fillEqually
 
@@ -48,41 +51,52 @@ class ViewController: UIViewController {
 
         [charactersButton, aliveCharactersButton, locationsButton].forEach { button in
             button.snp.makeConstraints { make in make.height.equalTo(64) }
-            button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
             optionStackView.addArrangedSubview(button)
         }
 
         charactersButton.setTitle("Characters", for: .normal)
+        charactersButton.addTarget(self, action: #selector(charactersButtonTapped), for: .touchUpInside)
         aliveCharactersButton.setTitle("Only Alive", for: .normal)
+        aliveCharactersButton.addTarget(self, action: #selector(aliveCharactersButtonTapped), for: .touchUpInside)
         locationsButton.setTitle("Locations", for: .normal)
+        locationsButton.addTarget(self, action: #selector(locationsButtonTapped), for: .touchUpInside)
+
+        interactor
+            .$currentState
+            .receive(on: DispatchQueue.main)
+            .sink { state in
+                self.updateUI(for: state)
+            }
+            .store(in: &cancellables)
+
+    }
+
+    private func updateUI(for state: ViewState) {
+        switch state {
+        case .loading:
+            characters = []
+        case .characters(let characters):
+            self.characters = characters
+        case .aliveCharacters(let characters):
+            self.characters = characters
+        case .locations:
+            break
+        case .error:
+            break
+        }
+        tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
     }
 
     @objc
-    private func buttonTapped(_ sender: UIButton) {
-        switch sender {
-        case charactersButton:
-            Task {
-                do {
-                    characters = try await client.fetch(service: CharacterService.allCharacters).results
-                    tableView.reloadData()
-                } catch {
-                    print("There was an error fetching all characters: \(error)")
-                }
-            }
-        case aliveCharactersButton:
-            Task {
-                do {
-                    characters = try await client.fetch(service: CharacterService.status(.alive)).results
-                    tableView.reloadData()
-                } catch {
-                    print("There was an error fetching alive characters: \(error)")
-                }
-            }
-        case locationsButton:
-            break
-        default:
-            break
-        }
+    private func charactersButtonTapped(_ sender: UIButton) {
+        interactor.fetchAllCharacters()
+    }
+    @objc
+    private func aliveCharactersButtonTapped(_ sender: UIButton) {
+        interactor.fetchAliveCharacters()
+    }
+    @objc
+    private func locationsButtonTapped(_ sender: UIButton) {
     }
 }
 
@@ -92,7 +106,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath)
         guard indexPath.row < characters.count else { return .init() }
         let char = characters[indexPath.row]
         cell.textLabel?.text = char.name

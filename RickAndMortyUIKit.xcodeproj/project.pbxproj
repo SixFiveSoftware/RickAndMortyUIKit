@@ -28,6 +28,7 @@
 		3BA7048F290337A800B88E03 /* ThumbnailImageActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7048E290337A800B88E03 /* ThumbnailImageActor.swift */; };
 		3BA7049229033B1200B88E03 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7049129033B1200B88E03 /* AsyncImageView.swift */; };
 		3BA7049729071D6900B88E03 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3BA7049629071D6900B88E03 /* SnapKit */; };
+		3BA7049B2907255C00B88E03 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7049A2907255C00B88E03 /* Interactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		3BA7048B290330D800B88E03 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		3BA7048E290337A800B88E03 /* ThumbnailImageActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageActor.swift; sourceTree = "<group>"; };
 		3BA7049129033B1200B88E03 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		3BA7049A2907255C00B88E03 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				3B396CE728B9568D00A99EB6 /* AppDelegate.swift */,
 				3B396CE928B9568D00A99EB6 /* SceneDelegate.swift */,
 				3B396CEB28B9568D00A99EB6 /* ViewController.swift */,
+				3BA7049A2907255C00B88E03 /* Interactor.swift */,
 				3B396CF028B9568E00A99EB6 /* Assets.xcassets */,
 				3B396CF228B9568E00A99EB6 /* LaunchScreen.storyboard */,
 				3B396CF528B9568E00A99EB6 /* Info.plist */,
@@ -390,6 +393,7 @@
 				3B396CEA28B9568D00A99EB6 /* SceneDelegate.swift in Sources */,
 				3BA704862903284500B88E03 /* URLSession+Async.swift in Sources */,
 				3B396D1828B9583100A99EB6 /* CharacterService.swift in Sources */,
+				3BA7049B2907255C00B88E03 /* Interactor.swift in Sources */,
 				3B396D2128B95E6100A99EB6 /* Errors.swift in Sources */,
 				3BA7049229033B1200B88E03 /* AsyncImageView.swift in Sources */,
 			);
