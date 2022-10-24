@@ -1,0 +1,9 @@
+.DS_Store 
+xcuserdata/
+*.xcscmblueprint
+build
+prebuild.log
+fastlane/Appfile
+*/swiftpm/Package.resolved
+*.ipa
+*.zip
