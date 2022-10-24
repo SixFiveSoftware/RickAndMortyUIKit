@@ -13,15 +13,13 @@ final class ServiceTests: XCTestCase {
     // MARK: private mock structs
     private struct MockService: Service {
         typealias ResponseType = RAMCharacter
-        var baseURL: String { "https://rickandmortyapi.com" }
-        var path: String { "api/character" }
+        var path: String { "character" }
         var method: RickAndMortyUIKit.ServiceMethod { .get }
     }
 
     private struct MockServiceWithParams: Service {
         typealias ResponseType = RAMCharacter
-        var baseURL: String { "https://rickandmortyapi.com" }
-        var path: String { "api/character" }
+        var path: String { "character" }
         var method: RickAndMortyUIKit.ServiceMethod { .get }
         var parameters: [String : Any]? { ["name": "Rick Sanchez", "status": "alive"] }
     }

@@ -14,7 +14,7 @@ final class RAMCharacterTests: XCTestCase {
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = RAMCharacter.decode(from: RAMCharacter.sampleData)
+        sut = try RAMCharacter.decode(from: RAMCharacter.sampleData)
     }
 
     override func tearDownWithError() throws {
